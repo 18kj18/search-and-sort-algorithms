@@ -29,8 +29,16 @@ print(BinarySearch([2, 4, 5, 7, 8, 9, 12, 14, 17, 19, 22, 25, 27, 28, 33, 37], 2
 def SimpleSort(l, l2 = []):
     min = l[0]
     for item in l:
-        if l[item] > min:
-            min = l[item]
-    print(min)
+        print(item)
+        if item < min:
+            min = item
+    
+    l2.append(min)
+    l.remove(min)
+    
+    if l == []:
+        return l2
+    else:
+        return SimpleSort(l)
 
-print(SimpleSort([9, 6, 10, 4, 8, 5, 7]))
+print("Sorted = ",SimpleSort([9, 6, 10, 4, 8, 5, 7]))
