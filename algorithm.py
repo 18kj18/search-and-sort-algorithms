@@ -42,3 +42,17 @@ def SimpleSort(l, l2 = []):
         return SimpleSort(l)
 
 print("Sorted = ",SimpleSort([9, 6, 10, 4, 8, 5, 7]))
+
+def SimpleSelect(l, index = 0):
+    min = l[0]
+    for item in l :
+        if l[index] > item:
+            min = item
+        else:
+            None
+    
+    l[index] = min
+    index += 1
+    return SimpleSelect(l, index)
+
+print("Sorted = ",SimpleSelect([9, 6, 10, 4, 8, 5, 7]))
